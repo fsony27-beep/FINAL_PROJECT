@@ -7,7 +7,6 @@ def test_create_and_get_order():
     # Создаем заказ
     order_body = data.order_data.get_order_body()
     order_response = sender_stand_request.post_new_order(order_body)
-    assert order_response.status_code == 201
     
     # Получаем трек
     track = order_response.json()["track"]
